@@ -26,7 +26,7 @@ namespace TestTask
                 _builder.AppendLine();
             });
 
-            File.WriteAllText(FilePath, _builder.ToString());
+            File.WriteAllTextAsync(FilePath, _builder.ToString());
         }
     }
 }
