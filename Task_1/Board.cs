@@ -48,14 +48,14 @@ namespace TestTask
         /// Search for matches at least 3 items
         /// </summary>
         /// <returns></returns>
-        public List<Node> LookForMatches()
+        public List<Node> LookForMatchNodes()
         {
             var allMatches = new List<Node>();
             for (int row = 0; row < _size; row++)
             {
                 for (int col = 0; col < _size; col++)
                 {
-                    var horizontalMatches = GetHorizontalMatches(col, row);
+                    var horizontalMatches = GetHorizontalNodes(col, row);
                     if (horizontalMatches.Count > 2)
                     {
                         col += horizontalMatches.Count;
@@ -68,7 +68,7 @@ namespace TestTask
             {
                 for (int row = 0; row < _size; row++)
                 {
-                    var verticalMatches = GetVerticalMatches(col, row);
+                    var verticalMatches = GetVerticalNodes(col, row);
                     if (verticalMatches.Count > 2)
                     {
                         row += verticalMatches.Count;
@@ -131,7 +131,7 @@ namespace TestTask
         /// <param name="col">Start column</param>
         /// <param name="row">Start row</param>
         /// <returns></returns>
-        private List<Node> GetVerticalMatches(int col, int row)
+        private List<Node> GetVerticalNodes(int col, int row)
         {
             var match = new List<Node>
             {
@@ -158,7 +158,7 @@ namespace TestTask
         /// <param name="col">Start column</param>
         /// <param name="row">Start row</param>
         /// <returns></returns>
-        private List<Node> GetHorizontalMatches(int col, int row)
+        private List<Node> GetHorizontalNodes(int col, int row)
         {
             var match = new List<Node>
             {
